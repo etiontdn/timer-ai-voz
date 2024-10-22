@@ -1,0 +1,19 @@
+{
+  "name": "timer-voz",
+  "version": "1.0.0",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon --exec \"npx browserify main-script.js > script.js\" --watch ./ --ignore script.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@google/generative-ai": "^0.21.0",
+    "browserify": "^17.0.1",
+    "crel": "^4.2.1",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1"
+  }
+}

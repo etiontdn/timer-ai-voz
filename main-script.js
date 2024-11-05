@@ -2,7 +2,7 @@ let timerState = require("./interface/timerState.js");
 let updateElements = require("./interface/updateElements.js");
 let aiTranslator = require("./recognition/aiTranslator.js");
 
-aiTranslator.run();
+const fetchPrompt = aiTranslator.fetchPrompt;
 
 timerState.createTimer(100, "Nome");
 timerState.createTimer(4, "segundo");
@@ -11,6 +11,8 @@ timerState.createTimer(4, "segundo");
 
 updateElements.updateTimers(timerState.state);
 window.setInterval(() => updateElements.updateTimes(timerState.state), 100);
+
+fetchPrompt("timer teste 10 minutos").then((res) => console.log(res));
 
 console.log("Test");
 /*var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;

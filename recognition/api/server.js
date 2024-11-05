@@ -1,6 +1,10 @@
 const express = require('express')
 const genAi = require('./genAi.js')
 const app = express()
+const cors = require('cors')
+
+
+app.use(cors())  // only this should works for every case also you can try 
 
 app.use(express.json())
 
@@ -15,7 +19,7 @@ app.post('/interpret', async (req, res) => {
     Não analise a solicitação, responda somente no formato especificado na primeira linha\n`
     + req.body.phrase;
     const response = await genAi.sendPrompt(prompt)
-    res.json({response})
+    res.json({response}).status(200).send()
 })
 
 app.listen(3000, () => {
